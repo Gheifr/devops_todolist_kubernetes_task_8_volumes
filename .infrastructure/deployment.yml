@@ -31,12 +31,12 @@ spec:
         - name: PYTHONUNBUFFERED
           valueFrom:
             configMapKeyRef:
-              name: configMap
+              name: app-config
               key: PYTHONUNBUFFERED
         - name: SECRET_KEY
           valueFrom:
             secretKeyRef:
-              name: secret
+              name: app-secret
               key: SECRET_KEY
         volumeMounts:                     # не обов'язкове. Монтує том до контейнера
             - name: todoapp-pv             # ім'я тому (має співпадати з іменем у volumes)
